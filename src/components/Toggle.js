@@ -1,0 +1,132 @@
+import { useEffect, useRef, useState } from "react";
+import styled from "styled-components";
+import { device, toggleData } from "../constants/standard";
+
+const Toggle = () => {
+  const [sliderWidth, setSliderWidth] = useState(0);
+  const [sliderLeft, setSliderLeft] = useState(0);
+  const [select, setSelect] = useState("");
+  const labelRef = useRef();
+  const sliderRef = useRef();
+
+  useEffect(() => {
+    if (select === "기본") {
+      setSliderLeft(0);
+      return;
+    }
+    if (select === "상세") {
+      console.log("width", sliderWidth);
+      setSliderLeft(sliderWidth);
+      return;
+    }
+  }, [select]);
+
+  useEffect(() => {
+    console.log(sliderLeft);
+  }, [sliderLeft]);
+
+  const handleToggle = (e) => {
+    const { value } = e.target.dataset;
+    setSliderWidth(labelRef.current.offsetWidth - 1);
+    setSelect(value);
+  };
+
+  return (
+    <ToggleContainer>
+      <RadioGroup>
+        {toggleData.map((item, idx) => (
+          <Label key={idx} ref={labelRef}>
+            <RadioBtn type="radio" name="radio" value={item} id={item} />
+            <RadioText htmlFor={item} data-value={item} onClick={handleToggle}>
+              {item}
+            </RadioText>
+          </Label>
+        ))}
+        <ToggleSlider
+          ref={sliderRef}
+          sliderWidth={sliderWidth}
+          sliderLeft={sliderLeft}
+        ></ToggleSlider>
+      </RadioGroup>
+    </ToggleContainer>
+  );
+};
+
+export default Toggle;
+
+const ToggleContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const RadioGroup = styled.div`
+  width: 70%;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  box-sizing: border-box;
+  background-color: ${(props) => props.theme.componentBgColor};
+  transition: all 0.3s ease;
+  @media ${device.laptop} {
+    width: 25%;
+  }
+
+  @media ${device.desktop} {
+    max-width: 25%;
+  }
+`;
+
+const RadioText = styled.span`
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  min-height: 30px;
+  z-index: 10;
+`;
+
+const ToggleSlider = styled.span`
+  display: inline-block;
+  position: absolute;
+  background-color: ${(props) => props.theme.toggleColor};
+  margin: 1px;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: ${(props) => props.sliderLeft + "px"};
+  border-radius: 14px;
+
+  width: ${(props) => props.sliderWidth + "px"};
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: left 0.4s ease;
+`;
+
+const RadioBtn = styled.input`
+  & + ${RadioText} {
+    opacity: 0.4;
+  }
+  &:checked + ${RadioText} {
+    opacity: 1;
+  }
+  &:checked {
+    background: none;
+    display: none;
+  }
+
+  &:checked + ${ToggleSlider} {
+  }
+  display: none;
+`;
+
+const Label = styled.label`
+  width: 50%;
+`;
