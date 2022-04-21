@@ -16,7 +16,9 @@ function App() {
       <div className="App">
         <Container>
           <Header />
-          <Toggle />
+          <ComponentArea>
+            <Toggle />
+          </ComponentArea>
         </Container>
       </div>
     </ThemeProvider>
@@ -29,7 +31,7 @@ const Container = styled.div`
   width: 100%;
   background-color: ${(props) => props.theme.backgroundColor};
   box-sizing: border-box;
-  padding: 5px;
+  padding: 8px 10px;
   transition: all 0.4s ease;
   color: ${(props) => props.theme.textColor};
 
@@ -39,4 +41,16 @@ const Container = styled.div`
   @media ${device.desktop} {
     max-width: 50%;
   }
+`;
+
+const ComponentArea = styled.div`
+  min-height: 30%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+  background-color: ${(props) => props.theme.componentAreaBgColor};
 `;

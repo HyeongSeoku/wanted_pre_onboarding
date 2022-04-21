@@ -6,6 +6,7 @@ export const theme = {
     mainColor: "rgba(3,218,197,0.7)",
     toggleColor: "rgba(254,254,254)",
     switchBgColor: "rgba(0,0,0,0.8)",
+    componentAreaBgColor: "rgba(254,254,254,0.1)",
   },
   dark: {
     backgroundColor: "rgba(0,0,0,0.8)",
@@ -14,5 +15,6 @@ export const theme = {
     mainColor: "rgba(3,218,197,0.7)",
     toggleColor: "rgba(2,2,2,0.4)",
     switchBgColor: "rgba(255,255,255,0.9)",
+    componentAreaBgColor: "rgba(2,2,2,0.5)",
   },
 };
