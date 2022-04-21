@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { device } from "../constants/standard";
-import { toggleData } from "../constants/componentsData";
+import { device } from "../../constants/standard";
+import { toggleData } from "../../constants/componentsData";
 
 const Toggle = () => {
   const [sliderWidth, setSliderWidth] = useState(0);
@@ -16,15 +16,10 @@ const Toggle = () => {
       return;
     }
     if (select === "상세") {
-      console.log("width", sliderWidth);
-      setSliderLeft(sliderWidth);
+      setSliderLeft(sliderWidth - 1);
       return;
     }
   }, [select]);
-
-  useEffect(() => {
-    console.log(sliderLeft);
-  }, [sliderLeft]);
 
   const handleToggle = (e) => {
     const { value } = e.target.dataset;
@@ -103,7 +98,6 @@ const ToggleSlider = styled.span`
   bottom: 0;
   left: ${(props) => props.sliderLeft + "px"};
   border-radius: 14px;
-
   width: ${(props) => props.sliderWidth + "px"};
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;

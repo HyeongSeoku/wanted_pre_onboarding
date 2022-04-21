@@ -1,6 +1,6 @@
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import styled from "styled-components";
-import { themeMode } from "../util/atoms";
+import { themeMode } from "../../util/atoms";
 
 const DarkModeSwitch = () => {
   const setIsDarkMode = useSetRecoilState(themeMode);

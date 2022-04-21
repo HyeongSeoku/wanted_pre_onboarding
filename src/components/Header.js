@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import DarkModeSwitch from "./DarkModeSwitch";
+import DarkModeSwitch from "./darkModeSwitch/DarkModeSwitch";
 
 const Header = () => {
   return (
