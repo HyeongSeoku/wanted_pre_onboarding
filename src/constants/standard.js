@@ -1,5 +1,3 @@
-export const toggleData = ["기본", "상세"];
-
 const size = {
   mobileS: "320px",
   mobileM: "375px",

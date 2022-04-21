@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { device, toggleData } from "../constants/standard";
+import { device } from "../constants/standard";
+import { toggleData } from "../constants/componentsData";
 
 const Toggle = () => {
   const [sliderWidth, setSliderWidth] = useState(0);
