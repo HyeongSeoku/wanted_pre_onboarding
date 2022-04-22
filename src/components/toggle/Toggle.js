@@ -118,8 +118,6 @@ const RadioBtn = styled.input`
     display: none;
   }
 
-  &:checked + ${ToggleSlider} {
-  }
   display: none;
 `;
 
