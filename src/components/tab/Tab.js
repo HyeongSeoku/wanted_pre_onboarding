@@ -40,6 +40,7 @@ const Tab = () => {
       </Nav>
       <SelectBar>
         <SelectSlider
+          currentMenu={currentMenu}
           sliderWidth={navItemWidth}
           currentIdx={currentIdx}
         ></SelectSlider>
@@ -87,7 +88,8 @@ const SelectSlider = styled.span`
       : props.sliderWidth * props.currentIdx + "px"};
   top: 0;
   bottom: 0;
-  width: ${(props) => props.sliderWidth + "px"};
+  width: ${(props) =>
+    props.currentMenu !== "" ? props.sliderWidth + "px" : "0px"};
   height: 100%;
   background-color: ${(props) => props.theme.mainColor};
   border-radius: 14px;
