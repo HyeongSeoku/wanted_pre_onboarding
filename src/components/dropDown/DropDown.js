@@ -21,7 +21,7 @@ const DropDown = () => {
       return;
     } else {
       const newData = dropDownData.filter((i) =>
-        i.toLowerCase().includes(searchWord.toLowerCase())
+        i.replace(/ /g, "").toLowerCase().includes(searchWord.toLowerCase())
       );
       setData(newData);
     }
@@ -37,7 +37,6 @@ const DropDown = () => {
     const newData = dropDownData.filter((i) =>
       i.replace(/ /g, "").toLowerCase().includes(value.toLowerCase())
     );
-    console.log("새 데이터2", newData);
   };
 
   const handleSelectItem = (e) => {
@@ -49,6 +48,7 @@ const DropDown = () => {
 
   return (
     <Container>
+      <Title>드롭 다운</Title>
       <SelectedDiv onClick={onClickSelecter}>
         <SelectedSpan>{selected}</SelectedSpan>
         <Icon>
@@ -99,6 +99,12 @@ const Container = styled.div`
     max-width: 50%;
     font-size: 1.1rem;
   }
+`;
+
+const Title = styled.div`
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
 `;
 
 const SelectedDiv = styled.div`
