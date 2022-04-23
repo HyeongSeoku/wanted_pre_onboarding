@@ -11,3 +11,13 @@ export const tabData = [
 ];
 
 export const sliderData = [0, 25, 50, 75, 100];
+
+export const dropDownData = [
+  "All Symbols",
+  "BTCUSD.PERP",
+  "ETHUSD.PERP",
+  "BCHUSD.PERP",
+  "LTCUSD.PERP",
+  "XRPUSD.PERP",
+  "10000SHIBUSD.PERP",
+];
