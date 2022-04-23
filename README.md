@@ -2,6 +2,8 @@
 
 원티드 프리온보딩 프론트엔드 4차 코스 과제 레포지토리입니다.
 
+## [🚀데모](https://hyeongseoku.github.io/wanted_pre_onboarding)
+
 ## 사용 기술 스택
 
 - React
