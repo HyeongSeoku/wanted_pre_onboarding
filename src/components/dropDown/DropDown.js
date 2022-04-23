@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { dropDownData } from "../../constants/componentsData";
 
 const DropDown = () => {
-  const [selected, setSelected] = useState("All Symbols");
+  const [selected, setSelected] = useState("All Teams");
   const [searchWord, setSearchWord] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [data, setData] = useState(dropDownData);
@@ -62,21 +62,23 @@ const DropDown = () => {
               <FontAwesomeIcon icon={faSearch} />
             </SearchIcon>
             <SearchInput
-              placeholder="Search Symbol"
+              placeholder="Search Teams"
               autoFocus
               value={searchWord}
               onChange={onChangeSearch}
             />
           </SearchDiv>
-          {data.map((item, idx) => (
-            <DropDownItem
-              key={idx}
-              data-symbol={item}
-              onClick={handleSelectItem}
-            >
-              {item}
-            </DropDownItem>
-          ))}
+          <DropDownItemContainer>
+            {data.map((item, idx) => (
+              <DropDownItem
+                key={idx}
+                data-symbol={item}
+                onClick={handleSelectItem}
+              >
+                {item}
+              </DropDownItem>
+            ))}
+          </DropDownItemContainer>
         </DropDownContainer>
       )}
     </Container>
@@ -86,7 +88,7 @@ export default DropDown;
 
 const Container = styled.div`
   width: 80%;
-  min-height: 300px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -141,6 +143,7 @@ const DropDownContainer = styled.div`
   padding: 5px 0px;
   margin-top: 3px;
   border-radius: 4px;
+  overflow: scroll;
 `;
 
 const SearchDiv = styled.div`
@@ -169,6 +172,12 @@ const SearchIcon = styled.div`
   margin-left: 10px;
   font-size: 16px;
   color: ${(props) => props.theme.componentTextColor};
+`;
+
+const DropDownItemContainer = styled.div`
+  width: 100%;
+  max-height: 200px;
+  overflow: scroll;
 `;
 
 const DropDownItem = styled.div`
