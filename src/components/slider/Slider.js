@@ -28,7 +28,7 @@ const Slider = () => {
       </Board>
       <SliderInput
         type="range"
-        min="1"
+        min="0"
         max="100"
         list="tickmarks"
         onChange={onChangeSlider}

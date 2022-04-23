@@ -9,3 +9,5 @@ export const tabData = [
   { title: "고구마", contents: sweetPotatoImg },
   { title: "카레라이스", contents: curyImg },
 ];
+
+export const sliderData = [0, 25, 50, 75, 100];
