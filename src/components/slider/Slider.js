@@ -94,6 +94,16 @@ const Board = styled.div`
 const SliderInput = styled.input`
   width: 93%;
   color: ${(props) => props.theme.mainColor};
+
+  /* &::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: ${(props) => props.theme.sliderMainColor};
+    margin-top: -4px;
+  } */
 `;
 
 const TagContainer = styled.div`

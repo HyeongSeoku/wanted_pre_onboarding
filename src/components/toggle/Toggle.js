@@ -79,6 +79,7 @@ const RadioGroup = styled.div`
   box-sizing: border-box;
   background-color: ${(props) => props.theme.componentBgColor};
   transition: all 0.3s ease;
+
   @media ${device.laptop} {
     width: 25%;
   }
@@ -97,6 +98,9 @@ const RadioText = styled.span`
   border-radius: 14px;
   min-height: 30px;
   z-index: 10;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const ToggleSlider = styled.span`
@@ -109,6 +113,9 @@ const ToggleSlider = styled.span`
   bottom: 0;
   left: ${(props) => props.sliderLeft + "px"};
   border-radius: 14px;
+  &:hover {
+    cursor: pointer;
+  }
   width: ${(props) => props.sliderWidth + "px"};
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;

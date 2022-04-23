@@ -34,9 +34,6 @@ const DropDown = () => {
   const onChangeSearch = (e) => {
     const { value } = e.target;
     setSearchWord(value);
-    const newData = dropDownData.filter((i) =>
-      i.replace(/ /g, "").toLowerCase().includes(value.toLowerCase())
-    );
   };
 
   const handleSelectItem = (e) => {
