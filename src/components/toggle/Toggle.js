@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { device, toggleData } from "../constants/standard";
+import { device } from "../../constants/standard";
+import { toggleData } from "../../constants/componentsData";
 
 const Toggle = () => {
   const [sliderWidth, setSliderWidth] = useState(0);
@@ -15,15 +16,10 @@ const Toggle = () => {
       return;
     }
     if (select === "상세") {
-      console.log("width", sliderWidth);
-      setSliderLeft(sliderWidth);
+      setSliderLeft(sliderWidth - 1);
       return;
     }
   }, [select]);
-
-  useEffect(() => {
-    console.log(sliderLeft);
-  }, [sliderLeft]);
 
   const handleToggle = (e) => {
     const { value } = e.target.dataset;
@@ -32,29 +28,41 @@ const Toggle = () => {
   };
 
   return (
-    <ToggleContainer>
-      <RadioGroup>
-        {toggleData.map((item, idx) => (
-          <Label key={idx} ref={labelRef}>
-            <RadioBtn type="radio" name="radio" value={item} id={item} />
-            <RadioText htmlFor={item} data-value={item} onClick={handleToggle}>
-              {item}
-            </RadioText>
-          </Label>
-        ))}
-        <ToggleSlider
-          ref={sliderRef}
-          sliderWidth={sliderWidth}
-          sliderLeft={sliderLeft}
-        ></ToggleSlider>
-      </RadioGroup>
-    </ToggleContainer>
+    <Container>
+      <Title>토글</Title>
+      <ToggleContainer>
+        <RadioGroup>
+          {toggleData.map((item, idx) => (
+            <Label key={idx} ref={labelRef}>
+              <RadioBtn type="radio" name="radio" value={item} id={item} />
+              <RadioText
+                htmlFor={item}
+                data-value={item}
+                onClick={handleToggle}
+              >
+                {item}
+              </RadioText>
+            </Label>
+          ))}
+          <ToggleSlider
+            ref={sliderRef}
+            sliderWidth={sliderWidth}
+            sliderLeft={sliderLeft}
+          ></ToggleSlider>
+        </RadioGroup>
+      </ToggleContainer>
+    </Container>
   );
 };
 
 export default Toggle;
 
+const Container = styled.div`
+  width: 100%;
+`;
+
 const ToggleContainer = styled.div`
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,7 +109,6 @@ const ToggleSlider = styled.span`
   bottom: 0;
   left: ${(props) => props.sliderLeft + "px"};
   border-radius: 14px;
-
   width: ${(props) => props.sliderWidth + "px"};
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
@@ -122,11 +129,15 @@ const RadioBtn = styled.input`
     display: none;
   }
 
-  &:checked + ${ToggleSlider} {
-  }
   display: none;
 `;
 
 const Label = styled.label`
   width: 50%;
+`;
+
+const Title = styled.div`
+  display: block;
+  margin-bottom: 30px;
+  font-weight: bold;
 `;
