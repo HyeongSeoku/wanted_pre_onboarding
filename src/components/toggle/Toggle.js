@@ -28,27 +28,38 @@ const Toggle = () => {
   };
 
   return (
-    <ToggleContainer>
-      <RadioGroup>
-        {toggleData.map((item, idx) => (
-          <Label key={idx} ref={labelRef}>
-            <RadioBtn type="radio" name="radio" value={item} id={item} />
-            <RadioText htmlFor={item} data-value={item} onClick={handleToggle}>
-              {item}
-            </RadioText>
-          </Label>
-        ))}
-        <ToggleSlider
-          ref={sliderRef}
-          sliderWidth={sliderWidth}
-          sliderLeft={sliderLeft}
-        ></ToggleSlider>
-      </RadioGroup>
-    </ToggleContainer>
+    <Container>
+      <Title>토글</Title>
+      <ToggleContainer>
+        <RadioGroup>
+          {toggleData.map((item, idx) => (
+            <Label key={idx} ref={labelRef}>
+              <RadioBtn type="radio" name="radio" value={item} id={item} />
+              <RadioText
+                htmlFor={item}
+                data-value={item}
+                onClick={handleToggle}
+              >
+                {item}
+              </RadioText>
+            </Label>
+          ))}
+          <ToggleSlider
+            ref={sliderRef}
+            sliderWidth={sliderWidth}
+            sliderLeft={sliderLeft}
+          ></ToggleSlider>
+        </RadioGroup>
+      </ToggleContainer>
+    </Container>
   );
 };
 
 export default Toggle;
+
+const Container = styled.div`
+  width: 100%;
+`;
 
 const ToggleContainer = styled.div`
   width: 100%;
@@ -123,4 +134,10 @@ const RadioBtn = styled.input`
 
 const Label = styled.label`
   width: 50%;
+`;
+
+const Title = styled.div`
+  display: block;
+  margin-bottom: 30px;
+  font-weight: bold;
 `;

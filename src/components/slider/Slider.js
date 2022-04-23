@@ -9,9 +9,7 @@ const Slider = () => {
   useEffect(() => {}, []);
 
   const onChangeSlider = (e) => {
-    console.log(e);
     const { value } = e.target;
-    console.log(value);
     setSliderValue(value);
   };
 
@@ -22,6 +20,7 @@ const Slider = () => {
 
   return (
     <Container>
+      <Title>슬라이더</Title>
       <Board>
         <BoardText>{sliderValue}</BoardText>
         <BoardPercent>%</BoardPercent>
@@ -35,8 +34,8 @@ const Slider = () => {
         value={sliderValue}
       />
       <TagContainer>
-        {sliderData.map((item) => (
-          <TagSpan data-tag={item} onClick={onClickTag}>
+        {sliderData.map((item, idx) => (
+          <TagSpan key={idx} data-tag={item} onClick={onClickTag}>
             {item}%
           </TagSpan>
         ))}
@@ -61,6 +60,12 @@ const Container = styled.div`
     max-width: 50%;
     font-size: 1.1rem;
   }
+`;
+
+const Title = styled.div`
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
 `;
 
 const BoardText = styled.span`

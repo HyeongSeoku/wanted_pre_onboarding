@@ -25,6 +25,7 @@ const Tab = () => {
 
   return (
     <TabContainer>
+      <Title>탭</Title>
       <Nav>
         {tabData.map((item, idx) => (
           <NavItem
@@ -109,6 +110,13 @@ const ContentsArea = styled.div`
   max-height: 400px;
   overflow: hidden;
   text-align: center;
+`;
+
+const Title = styled.div`
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
 `;
 
 const Img = styled.img.attrs((props) => ({

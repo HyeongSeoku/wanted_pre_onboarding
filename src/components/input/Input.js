@@ -7,7 +7,6 @@ import {
   faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { type } from "@testing-library/user-event/dist/type";
 
 const Input = () => {
   const [email, setEmail] = useState("");
@@ -18,10 +17,6 @@ const Input = () => {
   const emailRef = useRef();
   const pwdRef = useRef();
 
-  useEffect(() => {
-    console.log(emailFocus);
-  }, [emailFocus]);
-
   const onChangeEmail = (e) => {
     const { value } = e.target;
     setEmail(value);
@@ -29,7 +24,6 @@ const Input = () => {
   };
 
   const onFocusEmail = (e) => {
-    console.log(e.target.focus);
     setEmailFocus(true);
   };
 
@@ -56,6 +50,7 @@ const Input = () => {
 
   return (
     <Container>
+      <Title>인풋</Title>
       <TagContainer>
         <Tag>E-mail</Tag>
       </TagContainer>
@@ -125,6 +120,12 @@ const TagContainer = styled.div`
   flex-direction: row;
   align-items: flex-start;
   margin-top: 10px;
+`;
+
+const Title = styled.div`
+  display: block;
+  margin-top: 5px;
+  font-weight: bold;
 `;
 
 const EmailIcon = styled.span`
