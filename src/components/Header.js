@@ -9,18 +9,18 @@ const Header = () => {
   };
 
   return (
-    <Div>
+    <Header>
       <Logo onClick={onClickLogo}>
         <LogoImg />
       </Logo>
       <DarkModeSwitch />
-    </Div>
+    </Header>
   );
 };
 
 export default Header;
 
-const Div = styled.div`
+const Header = styled.header`
   width: 100%;
   display: flex;
   flex-direction: row;
