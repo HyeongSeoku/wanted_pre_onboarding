@@ -140,7 +140,6 @@ const DropDownContainer = styled.div`
   padding: 5px 0px;
   margin-top: 3px;
   border-radius: 4px;
-  overflow: scroll;
 `;
 
 const SearchDiv = styled.div`
