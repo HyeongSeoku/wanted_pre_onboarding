@@ -186,5 +186,6 @@ const DropDownItem = styled.div`
   color: ${(props) => props.theme.componentTextColor};
   &:hover {
     background-color: ${(props) => props.theme.componentBgColor};
+    cursor: pointer;
   }
 `;

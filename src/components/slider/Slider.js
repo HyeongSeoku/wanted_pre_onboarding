@@ -127,5 +127,6 @@ const TagSpan = styled.span`
   &:hover {
     background-color: ${(props) => props.theme.mainColor};
     opacity: 1;
+    cursor: pointer;
   }
 `;
