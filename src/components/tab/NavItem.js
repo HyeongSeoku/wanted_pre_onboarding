@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../constants/standard";
 
 const NavItem = ({
   title,
@@ -36,6 +37,12 @@ const NavItemContainer = styled.li`
   &:hover {
     cursor: pointer;
     opacity: 1;
+  }
+  @media ${device.mobileM} {
+    font-size: 15px;
+  }
+  @media ${device.mobileS} {
+    font-size: 15px;
   }
 `;
 

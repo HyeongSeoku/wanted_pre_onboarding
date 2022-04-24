@@ -67,6 +67,9 @@ const TabContainer = styled.div`
   @media ${device.desktop} {
     max-width: 50%;
   }
+  @media ${device.mobileS} {
+    max-width: 90%;
+  }
 `;
 
 const Nav = styled.nav`
