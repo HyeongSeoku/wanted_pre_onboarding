@@ -13,6 +13,7 @@ const Header = () => {
       <Logo onClick={onClickLogo}>
         <LogoImg />
       </Logo>
+      <Title>원티드 프리온보딩 과제 제출</Title>
       <DarkModeSwitch />
     </HeaderTag>
   );
@@ -35,6 +36,11 @@ const HeaderTag = styled.header`
   left: 0;
   right: 0;
   background-color: ${(props) => props.theme.headerBgColor};
+  -webkit-backdropfilter: blur(5px);
+  -moz-backdropfilter: blur(5px);
+  -o-backdropfilter: blur(5px);
+  -ms-backdropfilter: blur(5px);
+  backdrop-filter: blur(2px);
 `;
 
 const Logo = styled.div``;
@@ -50,4 +56,9 @@ const LogoImg = styled.img.attrs({
   @media ${device.desktop} {
     width: 100px;
   }
+`;
+
+const Title = styled.div`
+  font-size: larger;
+  font-weight: bold;
 `;
