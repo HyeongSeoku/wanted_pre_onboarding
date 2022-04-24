@@ -255,11 +255,11 @@
 
 ![wanted_input_demo](https://user-images.githubusercontent.com/48541850/164886964-d4f3b237-86d0-46c7-b415-c908c19e6bb9.gif)
 
-**핵심 요소 : 인풋창에 이메일과 비밀번호 입력이 가능하다**
-
 ### 💡 구현 전 구상
 
 - input을 두개 만들고 , email을 담당하는 input에는 이메일 체크 정규식을 활용하여 입력 값이 정확한지 validation을 표현하도록하고 password를 담당하는 input에는 type을 password로 준 뒤 아이콘이 클릭됨에 따라 type을 text로 바꿨다 원래대로 돌아왔다 하도록 구현하면 되겠다.
+
+- onFoucs와 onBlur를 사용하여 이메일을 입력중일때는 invalid massage가 뜨지 않도록 구현하였습니다.
 
 ### 😢 어려웠던 점
 
