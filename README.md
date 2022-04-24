@@ -303,7 +303,7 @@ const EmailIcon = styled.span`
 ### 💡 구현 전 구상
 
 - `selected` state값에 따라 text 값이 바뀌도록 바뀌도록 구현하고, `selected` state를 All Teams로 초기화, `data`state값에 따라 DropDown으로 펼쳐질 요소들을 랜더링 하면 되겠다.
-- `search`state로 search input의 값을 저장하고. 모든 데이터가 담긴`dropDownData`에서 `search`값을 includes 하는 값들을 filter로 다시 `data`state에 저장해주면 되겠다.
+- `search`state로 search input의 값을 저장하고. 모든 데이터가 담긴`dropDownData`에서 `search`값으로 시작하는 (startsWith) 값들을 filter로 다시 `data`state에 저장해주면 되겠다.
 
 ### 😢 어려웠던 점
 
