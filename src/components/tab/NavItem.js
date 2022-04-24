@@ -42,7 +42,7 @@ const NavItemContainer = styled.li`
     font-size: 15px;
   }
   @media ${device.mobileS} {
-    font-size: 15px;
+    font-size: 14px;
   }
 `;
 
