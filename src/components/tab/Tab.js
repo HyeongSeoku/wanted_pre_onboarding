@@ -124,6 +124,7 @@ const Title = styled.div`
 
 const Img = styled.img.attrs((props) => ({
   src: props.imgSrc,
+  alt: "선택된 이미지",
 }))`
   max-width: 30%;
   margin-top: 20px;

@@ -47,6 +47,7 @@ const Logo = styled.div``;
 
 const LogoImg = styled.img.attrs({
   src: LogoSrc,
+  alt: "로고 이미지",
 })`
   width: 70px;
 
