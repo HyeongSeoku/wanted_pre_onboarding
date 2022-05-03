@@ -21,7 +21,7 @@ const DropDown = () => {
       return;
     } else {
       const newData = dropDownData.filter((i) =>
-        i.replace(/ /g, "").toLowerCase().startsWith(searchWord.toLowerCase())
+        i.replace(/ /g, "").toLowerCase().includes(searchWord.toLowerCase())
       );
       setData(newData);
     }
