@@ -1,33 +1,21 @@
-import styled from "styled-components";
-import { device } from "../../constants/standard";
+import styled from 'styled-components'
+import { device } from '../../constants/standard'
 
-const NavItem = ({
-  title,
-  index,
-  currentMenu,
-  setCurrentMenu,
-  navRef,
-  setCurrentIdx,
-}) => {
+const NavItem = ({ title, index, currentMenu, setCurrentMenu, navRef, setCurrentIdx }) => {
   const onClickNavMenu = (e) => {
-    const { value } = e.currentTarget.dataset;
-    setCurrentMenu(value);
-    setCurrentIdx(index);
-  };
+    const { value } = e.currentTarget.dataset
+    setCurrentMenu(value)
+    setCurrentIdx(index)
+  }
 
   return (
-    <NavItemContainer
-      data-value={title}
-      onClick={onClickNavMenu}
-      isSelected={currentMenu === title}
-      ref={navRef}
-    >
+    <NavItemContainer data-value={title} onClick={onClickNavMenu} isSelected={currentMenu === title} ref={navRef}>
       <NavText>{title}</NavText>
     </NavItemContainer>
-  );
-};
+  )
+}
 
-export default NavItem;
+export default NavItem
 
 const NavItemContainer = styled.li`
   list-style: none;
@@ -44,6 +32,6 @@ const NavItemContainer = styled.li`
   @media ${device.mobileS} {
     font-size: 14px;
   }
-`;
+`
 
-const NavText = styled.span``;
+const NavText = styled.span``
